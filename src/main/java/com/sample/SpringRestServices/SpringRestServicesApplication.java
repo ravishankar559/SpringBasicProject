@@ -17,14 +17,14 @@ public class SpringRestServicesApplication {
 		ApplicationContext applicationContext = 
 		  SpringApplication.run(SpringRestServicesApplication.class, args);
 		
-		CreateRedisConnection RedisConnection = applicationContext.getBean(CreateRedisConnection.class);
+		//CreateRedisConnection RedisConnection = applicationContext.getBean(CreateRedisConnection.class);
 		
-		Jedis redisConnection = RedisConnection.createConnection();
+		//Jedis redisConnection = RedisConnection.createConnection();
 		
-		if(null != redisConnection) {
-			System.out.println("Created");
-			RedisConnection.closeConnection();
-		}
+		//if(null != redisConnection) {
+			//System.out.println("Created");
+			//RedisConnection.closeConnection();
+		//}
 
 	}
 }

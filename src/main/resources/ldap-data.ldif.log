@@ -1,39 +1,63 @@
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:32.430
 dn: dc=springframework,dc=org
 objectclass: top
 objectclass: domain
 objectclass: extensibleObject
 dc: springframework
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:32.618
 dn: ou=groups,dc=springframework,dc=org
 objectclass: top
 objectclass: organizationalUnit
 ou: groups
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:32.807
 dn: ou=subgroups,ou=groups,dc=springframework,dc=org
 objectclass: top
 objectclass: organizationalUnit
 ou: subgroups
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:33.007
 dn: ou=people,dc=springframework,dc=org
 objectclass: top
 objectclass: organizationalUnit
 ou: people
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:33.218
 dn: ou=space cadets,dc=springframework,dc=org
 objectclass: top
 objectclass: organizationalUnit
 ou: space cadets
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:33.440
 dn: ou=\"quoted people\",dc=springframework,dc=org
 objectclass: top
 objectclass: organizationalUnit
 ou: "quoted people"
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:33.651
 dn: ou=otherpeople,dc=springframework,dc=org
 objectclass: top
 objectclass: organizationalUnit
 ou: otherpeople
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:33.924
 dn: uid=ben,ou=people,dc=springframework,dc=org
 objectclass: top
 objectclass: person
@@ -44,6 +68,9 @@ sn: Alex
 uid: ben
 userPassword: benspassword
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:34.180
 dn: uid=bob,ou=people,dc=springframework,dc=org
 objectclass: top
 objectclass: person
@@ -54,6 +81,9 @@ sn: Hamilton
 uid: bob
 userPassword: bobspassword
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:34.402
 dn: uid=joe,ou=otherpeople,dc=springframework,dc=org
 objectclass: top
 objectclass: person
@@ -64,6 +94,9 @@ sn: Smeth
 uid: joe
 userPassword: joespassword
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:34.614
 dn: cn=mouse\, jerry,ou=people,dc=springframework,dc=org
 objectclass: top
 objectclass: person
@@ -74,6 +107,9 @@ sn: Mouse
 uid: jerry
 userPassword: jerryspassword
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:34.903
 dn: cn=slash/guy,ou=people,dc=springframework,dc=org
 objectclass: top
 objectclass: person
@@ -84,6 +120,9 @@ sn: Slash
 uid: slashguy
 userPassword: slashguyspassword
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:35.136
 dn: uid=space cadet,ou=space cadets,dc=springframework,dc=org
 objectclass: top
 objectclass: person
@@ -94,6 +133,9 @@ sn: Cadet
 uid: space cadet
 userPassword: spacecadetspassword
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:35.329
 dn: cn=developers,ou=groups,dc=springframework,dc=org
 objectclass: top
 objectclass: groupOfUniqueNames
@@ -102,6 +144,9 @@ ou: developer
 uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
 uniqueMember: uid=bob,ou=people,dc=springframework,dc=org
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:35.518
 dn: cn=managers,ou=groups,dc=springframework,dc=org
 objectclass: top
 objectclass: groupOfUniqueNames
@@ -110,6 +155,9 @@ ou: manager
 uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
 uniqueMember: cn=mouse\, jerry,ou=people,dc=springframework,dc=org
 
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2020-10-20T23:45:35.707
 dn: cn=submanagers,ou=subgroups,ou=groups,dc=springframework,dc=org
 objectclass: top
 objectclass: groupOfUniqueNames

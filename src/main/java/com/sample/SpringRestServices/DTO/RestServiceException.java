@@ -1,16 +1,17 @@
 package com.sample.SpringRestServices.DTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.WebApplicationException;
-
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 
-public class RestServiceException extends WebApplicationException{
+@Component
+public class RestServiceException{
 	
 	private HttpStatus status;
 	
-	private List<RestServiceErrorVo> errors;
+	private List<RestServiceErrorVo> error;
 
 	public HttpStatus getStatus() {
 		return status;
@@ -21,14 +22,16 @@ public class RestServiceException extends WebApplicationException{
 	}
 
 	public List<RestServiceErrorVo> getErrors() {
-		return errors;
+		return error;
 	}
 
-	public void setErrors(List<RestServiceErrorVo> errors) {
-		this.errors = errors;
+	public void setErrors(List<RestServiceErrorVo> error) {
+		this.error = error;
 	}
-
-	public RestServiceException() {
-		//Empty Constructor
+	
+	public void setErrors(RestServiceErrorVo error) {
+		List<RestServiceErrorVo> restServiceErrorVoList = new ArrayList<RestServiceErrorVo>();
+		restServiceErrorVoList.add(error);
+		this.error = restServiceErrorVoList;
 	}
 }

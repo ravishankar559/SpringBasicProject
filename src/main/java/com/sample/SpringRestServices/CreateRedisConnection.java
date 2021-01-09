@@ -1,12 +1,9 @@
 package com.sample.SpringRestServices;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import redis.clients.jedis.Jedis;
 
 
-@Component
 public class CreateRedisConnection {
     
 	private Jedis redisConnection;

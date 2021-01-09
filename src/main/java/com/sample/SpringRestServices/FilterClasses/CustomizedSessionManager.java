@@ -16,6 +16,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 @Configuration
 @ComponentScan(basePackages = "com.sample.SpringRestServices")
@@ -30,11 +32,16 @@ public class CustomizedSessionManager implements Filter{
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
 			throws IOException, ServletException {
 
-		doHandleSessionCookie((HttpServletRequest)request ,(HttpServletResponse)response);
+		//doHandleSessionCookie((HttpServletRequest)request ,(HttpServletResponse)response);
+		HttpSession session = ((HttpServletRequest) request).getSession(true);
+		
+		if(null == session.getAttribute("authStatus")) {
+			session.setAttribute("authStatus", false);
+		}
 		filterChain.doFilter(request, response);
 	}
 
-	private void doHandleSessionCookie(HttpServletRequest request,HttpServletResponse response) {
+	/*private void doHandleSessionCookie(HttpServletRequest request,HttpServletResponse response) {
 
 		Cookie[] cookies = request.getCookies();
 
@@ -51,9 +58,9 @@ public class CustomizedSessionManager implements Filter{
 		if(sessionCookie == null) {
 			createSessionCookie(request , response);
 		}
-	}
+	}*/
 
-	private void createSessionCookie(HttpServletRequest request, HttpServletResponse response) {
+	/*private void createSessionCookie(HttpServletRequest request, HttpServletResponse response) {
 
 		boolean isGeneratedWithRepeatingValues = false;
 		char[] randomValue = generateRandomSessionValue();
@@ -93,10 +100,10 @@ public class CustomizedSessionManager implements Filter{
 		//creating the session if not there
 		HttpSession session = request.getSession(true);
 		session.setMaxInactiveInterval(120);
-	}
+	}*/
 
 	//To Generate the Random Value.
-	private char[] generateRandomSessionValue() {
+	/*private char[] generateRandomSessionValue() {
 
 		String allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_+";
 		int size = 14;
@@ -114,6 +121,6 @@ public class CustomizedSessionManager implements Filter{
 		}
 
 		return randomValue;
-	}
+	}*/
 
 }

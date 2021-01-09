@@ -1,5 +1,8 @@
 package com.sample.SpringRestServices.DTO;
 
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class RestServiceErrorVo {
 
 	private String errorCode;
